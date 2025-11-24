@@ -112,3 +112,8 @@ Main Figure 4 generation for the manuscript.
 - VEP (Ensembl Variant Effect Predictor) v110+
 - PRS-CS (https://github.com/getian107/PRScs)
 - pyRareComb (https://pypi.org/project/pyrarecomb)
+
+---
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
