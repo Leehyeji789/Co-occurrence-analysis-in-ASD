@@ -1,0 +1,25 @@
+{
+  "command": [
+    "vep",
+    "--format", "vcf",
+    "__OUTPUT_FORMAT_FLAG__",
+    "--everything",
+    "--no_stats",
+    "--cache", "--offline",
+    "--assembly", "GRCh38",
+    "--fasta", "/path/to/vep/fasta/Homo_sapiens_assembly38.fasta",
+    "--pick", "--pick_order", "rank,canonical,appris,tsl,biotype,ccds,length",
+    "--plugin", "CADD,/path/to/vep/CADD/whole_genome_SNVs.tsv.gz,/path/to/vep/CADD/gnomad.genomes.r3.0.indel.tsv.gz",
+    "--plugin", "AlphaMissense,file=/path/to/vep/AlphaMissense/AlphaMissense_hg38.tsv.gz,cols=uniprot_id:am_pathogenicity:am_class",
+    "--plugin", "LoF,loftee_path:/path/to/vep/Plugins/,human_ancestor_fa:/path/to/vep/loftee/human_ancestor.fa.gz,conservation_file:/path/to/vep/loftee/loftee.sql,gerp_bigwig:/path/to/vep/loftee/gerp_conservation_scores.homo_sapiens.GRCh38.bw",
+    "--plugin", "dbNSFP,/path/to/vep/dbNSFP/dbNSFP4.4a_grch38.gz,Ensembl_transcriptid,REVEL_rankscore,MetaSVM_rankscore,gMVP_rankscore,MPC_rankscore,PrimateAI_rankscore,MetaRNN_rankscore,FATHMM_converted_rankscore,PROVEAN_converted_rankscore,VEST4_rankscore,BayesDel_addAF_rankscore,CADD_raw_rankscore,DEOGEN2_rankscore,ClinPred_rankscore,VARITY_R_rankscore,gnomAD_exomes_non_neuro_AF,gnomAD_exomes_non_neuro_AC,gnomAD_exomes_non_neuro_POPMAX_AF,gnomAD_exomes_non_neuro_POPMAX_AC,gnomAD_exomes_non_neuro_EAS_AF,gnomAD_exomes_non_neuro_EAS_AC,gnomAD_exomes_non_neuro_NFE_AF,gnomAD_exomes_non_neuro_NFE_AC,gnomAD_genomes_non_neuro_AF,gnomAD_genomes_non_neuro_AC,gnomAD_genomes_non_neuro_EAS_AF,gnomAD_genomes_non_neuro_EAS_AC,gnomAD_genomes_non_neuro_NFE_AF,gnomAD_genomes_non_neuro_NFE_AC,clinvar_id,clinvar_clnsig,clinvar_trait",
+    "--nearest", "transcript",
+    "--dir=/path/to/vep/cache",
+    "--dir_plugins=/path/to/vep/Plugins/",
+    "-o", "STDOUT"
+  ],
+  "env": {
+    "PERL5LIB": "/path/to/perl"
+  },
+  "vep_json_schema": "Struct{assembly_name:String,allele_string:String,ancestral:String,colocated_variants:Array[Struct{somatic:Int32,start:Int32,strand:Int32}],context:String,end:Int32,id:String,input:String,intergenic_consequences:Array[Struct{allele_num:Int32}],most_severe_consequence:String,motif_feature_consequences:Array[Struct{allele_num:Int32}],regulatory_feature_consequences:Array[Struct{allele_num:Int32}],seq_region_name:String,start:Int32,strand:Int32,transcript_consequences:Array[Struct{allele_num:Int32,amino_acids:String,biotype:String,canonical:Int32,ccds:String,cdna_start:Int32,cdna_end:Int32,cds_end:Int32,cds_start:Int32,cds_start_NF:String,codons:String,consequence_terms:Array[String],distance:Int32,domains:Array[Struct{db:String,name:String}],exon:String,gene_id:String,gene_pheno:Int32,gene_symbol:String,gene_symbol_source:String,hgnc_id:String,hgvsc:String,hgvsp:String,hgvs_offset:Int32,impact:String,intron:String,lof:String,lof_flags:String,lof_filter:String,lof_info:String,minimised:Int32,polyphen_prediction:String,polyphen_score:Float64,protein_end:Int32,protein_start:Int32,protein_id:String,sift_prediction:String,sift_score:Float64,cadd_phred:Float64,cadd_raw:Float64,strand:Int32,swissprot:String,transcript_id:String,trembl:String,uniparc:Array[String],uniprot_isoform:Array[String],ensembl_transcriptid:String,revel_rankscore:Float64,metasvm_rankscore:Float64,gmvp_rankscore:Float64,mpc_rankscore:Float64,primateai_rankscore:Float64,metarnn_rankscore:Float64,fathmm_converted_rankscore:Float64,provean_converted_rankscore:Float64,vest4_rankscore:Float64,bayesdel_addaf_rankscore:Float64,cadd_raw_rankscore:Float64,deogen2_rankscore:Float64,clinpred_rankscore:Float64,varity_r_rankscore:Float64,gnomad_exomes_non_neuro_af:Float64,gnomad_exomes_non_neuro_popmax_af:Float64,gnomad_exomes_non_neuro_eas_af:Float64,gnomad_exomes_non_neuro_nfe_af:Float64,gnomad_genomes_non_neuro_af:Float64,gnomad_genomes_non_neuro_eas_af:Float64,gnomad_genomes_non_neuro_nfe_af:Float64,gnomad_exomes_non_neuro_ac:Float64,gnomad_exomes_non_neuro_popmax_ac:Float64,gnomad_exomes_non_neuro_eas_ac:Float64,gnomad_exomes_non_neuro_nfe_ac:Float64,gnomad_genomes_non_neuro_ac:Float64,gnomad_genomes_non_neuro_eas_ac:Float64,gnomad_genomes_non_neuro_nfe_ac:Float64,clinvar_id:String,clinvar_clnsig:String,clinvar_trait:String,variant_allele:String,am_pathogenicity:Float64,am_class:String,nmd:String}],variant_class:String}"
+}
