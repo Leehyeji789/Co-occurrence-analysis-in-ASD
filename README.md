@@ -18,7 +18,7 @@ Whole-genome variant quality control and rare variant annotation using gnomAD.
 Modified de novo variant caller for DRAGEN IGG pVCF files.
 
 ### vep-configuration.json
-VEP configuration for functional annotation with CADD, AlphaMissense, LoF, and dbNSFP plugins.
+VEP configuration for functional annotation with additional plugins.
 
 ### run_PRScs.sh
 Polygenic score calculation using PRS-CS with European LD reference panels.
